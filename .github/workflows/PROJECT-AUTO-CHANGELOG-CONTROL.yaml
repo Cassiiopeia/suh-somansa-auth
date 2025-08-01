@@ -282,17 +282,22 @@ jobs:
               exit(1)
           PYTHON_SCRIPT
 
-      - name: 변경사항 커밋 및 푸시
+        - name: 변경사항 커밋 및 푸시
         if: env.SUMMARY_FOUND == 'true'
         run: |
           git add CHANGELOG.json CHANGELOG.md
-          
+
           if git diff --staged --quiet; then
             echo "📝 변경사항이 없습니다"
           else
             git commit -m "suh-somansa-auth 버전 관리 : docs : v${{ steps.get_version.outputs.version }} 릴리즈 문서 업데이트 (PR #${{ github.event.pull_request.number }})"
-            git push origin HEAD:main
-            echo "✅ 변경사항이 성공적으로 커밋되었습니다"
+
+            # ★ 로컬 main 브랜치를 HEAD 로 맞춰 놓기
+            git branch -f main HEAD
+
+            # ★ 이제 push 가능
+            git push origin main
+            echo "✅ 변경사항이 성공적으로 커밋·푸시되었습니다"
           fi
 
       - name: 자동 PR Merge
