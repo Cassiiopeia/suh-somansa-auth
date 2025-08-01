@@ -1,7 +1,7 @@
 name: CHANGELOG 자동 업데이트
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize]
     branches: ["deploy"]
 
