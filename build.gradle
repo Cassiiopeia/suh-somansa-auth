@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'me.suhsaechan'
-version = '1.0.7'
+version = '1.0.8'
 //version = project.hasProperty('version') ? project.property('version') : '1.0.0'
 
 java {
