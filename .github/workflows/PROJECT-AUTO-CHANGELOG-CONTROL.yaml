@@ -291,7 +291,7 @@ jobs:
             echo "📝 변경사항이 없습니다"
           else
             git commit -m "suh-somansa-auth 버전 관리 : docs : v${{ steps.get_version.outputs.version }} 릴리즈 문서 업데이트 (PR #${{ github.event.pull_request.number }})"
-            git push origin main
+            git push origin HEAD:main
             echo "✅ 변경사항이 성공적으로 커밋되었습니다"
           fi
 
