@@ -302,7 +302,7 @@ jobs:
         run: |
           echo "🔄 PR #${{ github.event.pull_request.number }} 자동 머지 시도 중..."
           
-          if gh pr merge ${{ github.event.pull_request.number }} --merge; then
+          if gh pr merge ${{ github.event.pull_request.number }} --admin --merge; then
             echo "✅ PR이 성공적으로 머지되었습니다!"
           else
             echo "❌ PR 머지에 실패했습니다. 수동으로 처리해주세요."
