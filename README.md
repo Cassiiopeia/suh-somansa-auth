@@ -5,7 +5,6 @@
 ## 기능
 
 - 소만사 Mattermost 로그인을 통한 직원 인증 확인
-- 내부 Logger 구현 (SLF4J 의존성 충돌 방지)
 - OkHttp를 사용한 안정적인 HTTP 통신
 - 간단한 boolean 반환으로 직원 여부 확인
 
@@ -24,7 +23,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'me.suhsaechan:suh-somansa-auth:1.0.0'
+    implementation 'me.suhsaechan:suh-somansa-auth: X.X.X' // 최신 버전으로 변경
 }
 ```
 
@@ -48,7 +47,7 @@ dependencies {
     <dependency>
         <groupId>me.suhsaechan</groupId>
         <artifactId>suh-somansa-auth</artifactId>
-        <version>1.0.0</version>
+        <version>X.X.X</version> <!-- 최신 버전으로 변경 -->
     </dependency>
 </dependencies>
 ```

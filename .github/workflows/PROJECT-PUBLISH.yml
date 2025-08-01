@@ -2,8 +2,10 @@ name: Publish suh-somansa-auth to Nexus Repository
 
 on:
   push:
+    branches:
+      - deploy  # (기본) deploy 브랜치 푸시될 때 트리거
     tags:
-      - 'v*.*.*'  # v 시맨틱 버전 태그 형식 제한 (예: v1.0.0)
+      - 'v*.*.*'  # 태그 푸시될 때 트리거
 
 jobs:
   publish:
