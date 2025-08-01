@@ -20,7 +20,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
-          ref: main
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Git 설정 및 최신 상태 동기화
         run: |
