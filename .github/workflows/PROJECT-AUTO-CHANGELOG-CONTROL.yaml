@@ -15,17 +15,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 저장소 체크아웃
+      - name: 저장소 체크아웃 (main 브랜치)
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
-          ref: main
 
-      - name: Git 설정 및 최신 상태 동기화
+      - name: main 브랜치로 강제 전환
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git checkout main
           git pull origin main
 
       - name: 현재 버전 확인
