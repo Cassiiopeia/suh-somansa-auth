@@ -1,4 +1,4 @@
-iname: CHANGELOG 자동 업데이트
+name: CHANGELOG 자동 업데이트
 
 on:
   pull_request:

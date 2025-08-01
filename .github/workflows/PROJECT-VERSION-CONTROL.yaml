@@ -8,6 +8,9 @@ on:
       - 'CHANGELOG.json'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   version-bump:
     name: 버전 자동 증가
