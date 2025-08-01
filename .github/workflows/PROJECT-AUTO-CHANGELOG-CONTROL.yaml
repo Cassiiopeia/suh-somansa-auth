@@ -285,6 +285,7 @@ jobs:
       - name: 변경사항 커밋 및 푸시
         if: env.SUMMARY_FOUND == 'true'
         run: |
+          git checkout -B main
           git pull origin main
           git add CHANGELOG.json CHANGELOG.md
           
