@@ -20,7 +20,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: main
 
       - name: Git 설정 및 최신 상태 동기화
         run: |
@@ -285,8 +285,6 @@ jobs:
       - name: 변경사항 커밋 및 푸시
         if: env.SUMMARY_FOUND == 'true'
         run: |
-          git checkout -B main
-          git pull origin main
           git add CHANGELOG.json CHANGELOG.md
           
           if git diff --staged --quiet; then
