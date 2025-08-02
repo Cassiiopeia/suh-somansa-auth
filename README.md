@@ -7,7 +7,7 @@
 ## ✨ 주요 기능
 
 - 🔐 **소만사 Mattermost 로그인을 통한 직원 인증 확인**
-- 👤 **실제 사용자 이름 조회 기능** 
+- 👤 **실제 사용자 이름 조회 기능**
 - 🌐 **OkHttp를 사용한 안정적인 HTTP 통신**
 - 🎯 **간단한 boolean 반환으로 직원 여부 확인**
 - 📝 **깔끔한 로그 출력 및 디버그 지원**
@@ -39,24 +39,24 @@ dependencies {
 
 ```xml
 <repositories>
-    <repository>
-        <id>suh-nexus</id>
-        <url>http://suh-project.synology.me:9999/repository/maven-releases/</url>
-        <releases>
-            <enabled>true</enabled>
-        </releases>
-        <snapshots>
-            <enabled>false</enabled>
-        </snapshots>
-    </repository>
+  <repository>
+    <id>suh-nexus</id>
+    <url>http://suh-project.synology.me:9999/repository/maven-releases/</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </repository>
 </repositories>
 
 <dependencies>
-    <dependency>
-        <groupId>me.suhsaechan</groupId>
-        <artifactId>suh-somansa-auth</artifactId>
-        <version>X.X.X</version> <!-- 최신 버전으로 변경 -->
-    </dependency>
+<dependency>
+  <groupId>me.suhsaechan</groupId>
+  <artifactId>suh-somansa-auth</artifactId>
+  <version>X.X.X</version> <!-- 최신 버전으로 변경 -->
+</dependency>
 </dependencies>
 ```
 
@@ -69,20 +69,20 @@ import me.suhsaechan.suhsomansaauth.service.SomansaAuthEngine;
 import me.suhsaechan.suhsomansaauth.dto.SomansaAuthResult;
 
 public class AdvancedExample {
-    public static void main(String[] args) {
-        SomansaAuthEngine authEngine = new SomansaAuthEngine();
-        
-        // 🆕 직원 인증 + 실제 이름 조회
-        SomansaAuthResult result = authEngine.getSomansaEmployeeInfo("chan4760", "password");
-        
-        if (result.isSomansaEmployee()) {
-            System.out.println("✅ 소만사 직원입니다!");
-            System.out.println("👤 이름: " + result.getUserName()); // 예: "서새찬"
-            System.out.println("📝 메시지: " + result.getMessage());
-        } else {
-            System.out.println("❌ " + result.getMessage());
-        }
+  public static void main(String[] args) {
+    SomansaAuthEngine authEngine = new SomansaAuthEngine();
+
+    // 🆕 직원 인증 + 실제 이름 조회
+    SomansaAuthResult result = authEngine.getSomansaEmployeeInfo("chan4760", "password");
+
+    if (result.isSomansaEmployee()) {
+      System.out.println("✅ 소만사 직원입니다!");
+      System.out.println("👤 이름: " + result.getUserName()); // 예: "서새찬"
+      System.out.println("📝 메시지: " + result.getMessage());
+    } else {
+      System.out.println("❌ " + result.getMessage());
     }
+  }
 }
 ```
 
@@ -95,54 +95,43 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
-    
-    private final SomansaAuthEngine somansaAuthEngine;
-    
-    public UserService(SomansaAuthEngine somansaAuthEngine) {
-        this.somansaAuthEngine = somansaAuthEngine;
+
+  private final SomansaAuthEngine somansaAuthEngine;
+
+  public UserService(SomansaAuthEngine somansaAuthEngine) {
+    this.somansaAuthEngine = somansaAuthEngine;
+  }
+
+  public boolean checkEmployee(String loginId, String password) {
+    SomansaAuthResult result = somansaAuthEngine.isSomansaEmployee(loginId, password);
+    return result.isSomansaEmployee();
+  }
+
+  // 🆕 이름까지 가져오는 메서드
+  public String getEmployeeNameIfValid(String loginId, String password) {
+    SomansaAuthResult result = somansaAuthEngine.getSomansaEmployeeInfo(loginId, password);
+
+    if (result.isSomansaEmployee()) {
+      return result.getUserName(); // 실제 이름 반환
     }
-    
-    public boolean checkEmployee(String loginId, String password) {
-        SomansaAuthResult result = somansaAuthEngine.isSomansaEmployee(loginId, password);
-        return result.isSomansaEmployee();
-    }
-    
-    // 🆕 이름까지 가져오는 메서드
-    public String getEmployeeNameIfValid(String loginId, String password) {
-        SomansaAuthResult result = somansaAuthEngine.getSomansaEmployeeInfo(loginId, password);
-        
-        if (result.isSomansaEmployee()) {
-            return result.getUserName(); // 실제 이름 반환
-        }
-        return null;
-    }
+    return null;
+  }
 }
 ```
-
-## 인증 로직
-
-### 성공 사례
-1. **정상 로그인**: HTTP 200 응답 시 소만사 직원으로 판정
-2. **MFA 단계**: HTTP 401이지만 `mfa.validate_token.authenticate.app_error` 에러 ID가 포함된 경우 소만사 직원으로 판정
-
-### 실패 사례
-1. **잘못된 인증 정보**: `api.user.login.invalid_credentials_email_username` 에러 ID가 포함된 경우 소만사 직원이 아님으로 판정
-2. **시스템 오류**: 네트워크 오류 또는 예상치 못한 응답
-
 ## 📊 응답 구조
 
 ```java
 public class SomansaAuthResult {
-    private boolean isSomansaEmployee;  // 소만사 직원 여부
-    private boolean isAuthSuccess;      // 인증 성공 여부
-    private String message;             // 응답 메시지
-    private String errorId;             // 에러 ID (실패 시)
-    private String requestId;           // 요청 ID
-    private String userName;            // 🆕 사용자 이름 (v1.0.5+)
+  private boolean isSomansaEmployee;  // 소만사 직원 여부
+  private boolean isAuthSuccess;      // 인증 성공 여부
+  private String message;             // 응답 메시지
+  private String errorId;             // 에러 ID (실패 시)
+  private String requestId;           // 요청 ID
+  private String userName;            // 🆕 사용자 이름 (v1.0.5+)
 }
 ```
 
-### 메서드 
+### 메서드
 
 - `getSomansaEmployeeInfo(loginId, password)` - 직원 인증 + 실제 이름 조회
 - `getUserName()` - 조회된 사용자 실제 이름 반환
