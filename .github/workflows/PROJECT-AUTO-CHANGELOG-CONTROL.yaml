@@ -309,16 +309,16 @@ jobs:
             exit 1
           fi
 
-      - name: Deploy 브랜치로 강제 동기화
+      - name: PUBLISH-SUH-NEXUS-REPOSITORY 워크플로우 트리거
         if: env.SUMMARY_FOUND == 'true'
         run: |
-          echo "🚀 Deploy 브랜치로 강제 동기화 시작..."
-
-          # deploy 브랜치를 main과 동일하게 만들기
-          git checkout main
-          git push origin main:deploy --force
-
-          echo "✅ Deploy 브랜치 강제 동기화 완료! 배포 워크플로우가 트리거됩니다."
+          echo "🚀 PUBLISH-SUH-NEXUS-REPOSITORY 워크플로우 트리거 중..."
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/dispatches \
+            -d '{"event_type":"PUBLISH-SUH-NEXUS-REPOSITORY"}'
+          echo "✅ PUBLISH-SUH-NEXUS-REPOSITORY 워크플로우가 트리거되었습니다!"
 
       - name: 정리
         run: |
