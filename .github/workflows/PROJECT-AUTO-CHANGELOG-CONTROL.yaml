@@ -326,6 +326,6 @@ jobs:
           
           echo "✅ Deploy 브랜치 업데이트 완료! 배포 워크플로우가 트리거됩니다."
 
-        - name: 정리
-          run: |
-            rm -f pr_content.html summary_section.html parse_changelog.py
+      - name: 정리
+        run: |
+          rm -f pr_content.html summary_section.html parse_changelog.py
