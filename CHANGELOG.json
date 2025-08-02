@@ -1,10 +1,24 @@
 {
   "metadata": {
-    "lastUpdated": "2025-08-02T18:01:08Z",
-    "currentVersion": "1.0.23",
-    "totalReleases": 9
+    "lastUpdated": "2025-08-02T18:27:32Z",
+    "currentVersion": "1.0.24",
+    "totalReleases": 10
   },
   "releases": [
+    {
+      "version": "1.0.24",
+      "date": "2025-08-02",
+      "pr_number": 29,
+      "raw_summary": "\"body_html\": \"\\nSummary by CodeRabbit\\n\\n\\n문서\\n\\nREADME.md의 서식과 가독성이 개선되었습니다. 코드 예제와 XML 블록의 들여쓰기 및 공백이 정리되었으며, 변경 이력 섹션이 간결하게 수정되었습니다.\\n\\n\\n\\nChore\\n\\n프로젝트 버전이 1.0.23에서 1.0.24로 업데이트되었습니다.\\n\\n\\n\\n\",\n  \"active_lock_reason\": null,\n  \"merged\": false,\n  \"mergeable\": true,\n  \"rebaseable\": false,\n  \"mergeable_state\": \"unstable\",\n  \"merged_by\": null,\n  \"comments\": 1,\n  \"review_comments\": 1,\n  \"maintainer_can_modify\": false,\n  \"commits\": 3,\n  \"additions\": 57,\n  \"deletions\": 70,\n  \"changed_files\": 2\n}",
+      "parsed_changes": {
+        "문서": [
+          "README.md의 서식과 가독성이 개선되었습니다. 코드 예제와 XML 블록의 들여쓰기 및 공백이 정리되었으며, 변경 이력 섹션이 간결하게 수정되었습니다."
+        ],
+        "chore": [
+          "프로젝트 버전이 1.0.23에서 1.0.24로 업데이트되었습니다."
+        ]
+      }
+    },
     {
       "version": "1.0.23",
       "date": "2025-08-02",
