@@ -309,15 +309,23 @@ jobs:
             exit 1
           fi
 
-      - name: 배포 워크플로우 트리거
+      - name: Deploy 브랜치로 강제 머지
         if: env.SUMMARY_FOUND == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "🚀 배포 워크플로우 트리거 중..."
-          gh workflow run "PUBLISH-SUH-NEXUS-REPOSITORY"
-          echo "✅ 배포 워크플로우가 트리거되었습니다!"
+          echo "🚀 Deploy 브랜치로 강제 머지 시작..."
+          
+          # deploy 브랜치 체크아웃
+          git fetch origin deploy:deploy
+          git checkout deploy
+          
+          # main 브랜치를 deploy로 강제 머지
+          git merge main --no-ff -m "자동 배포: v${{ steps.get_version.outputs.version }} 릴리즈"
+          
+          # deploy 브랜치에 푸시 (배포 워크플로우 트리거)
+          git push origin deploy
+          
+          echo "✅ Deploy 브랜치 업데이트 완료! 배포 워크플로우가 트리거됩니다."
 
-      - name: 정리
-        run: |
-          rm -f pr_content.html summary_section.html parse_changelog.py
+        - name: 정리
+          run: |
+            rm -f pr_content.html summary_section.html parse_changelog.py

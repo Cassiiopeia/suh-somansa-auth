@@ -3,6 +3,9 @@ name: UPDATE-PROJECT-README
 on:
   workflow_dispatch:  # 수동 트리거 허용
 
+permissions:
+  contents: write  # main 브랜치에 push할 수 있는 권한 추가
+
 jobs:
   publish-and-update:
     runs-on: ubuntu-latest
