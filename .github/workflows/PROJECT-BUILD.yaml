@@ -1,4 +1,4 @@
-name: Build & Test suh-somansa-auth
+name: PROJECT-BUILD-TEST
 
 on:
   push:

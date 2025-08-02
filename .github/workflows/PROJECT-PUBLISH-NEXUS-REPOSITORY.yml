@@ -1,4 +1,4 @@
-name: Publish suh-somansa-auth to Nexus Repository
+name: PUBLISH-PROJECT-NEXUS-REPOSITORY
 
 on:
   push:
@@ -35,3 +35,11 @@ jobs:
           VERSION=${TAG_NAME#v}                # 접두사 제거
           echo "Publishing suh-somansa-auth version $VERSION"   # 버전 확인
           ./gradlew publish -Pversion=$VERSION # Nexus 배포
+
+      - name: README 업데이트 워크플로우 트리거
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🚀 README 업데이트 워크플로우 트리거 중..."
+          gh workflow run "UPDATE-PROJECT-README" --ref ${{ github.ref_name }}
+          echo "✅ README 업데이트 워크플로우가 트리거되었습니다!"

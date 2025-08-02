@@ -1,4 +1,4 @@
-name: 자동 버전 업데이트
+name: PROJECT-VERSION-CONTROL
 
 on:
   push:

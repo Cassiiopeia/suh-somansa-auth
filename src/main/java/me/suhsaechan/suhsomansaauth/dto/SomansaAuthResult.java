@@ -20,6 +20,9 @@ public class SomansaAuthResult {
     // 요청 ID
     private String requestId;
     
+    // 사용자 이름
+    private String userName;
+    
     public SomansaAuthResult() {}
     
     public SomansaAuthResult(boolean isSomansaEmployee, boolean isAuthSuccess, String message, String errorId, String requestId) {
@@ -28,6 +31,16 @@ public class SomansaAuthResult {
         this.message = message;
         this.errorId = errorId;
         this.requestId = requestId;
+        this.userName = null;
+    }
+    
+    public SomansaAuthResult(boolean isSomansaEmployee, boolean isAuthSuccess, String message, String errorId, String requestId, String userName) {
+        this.isSomansaEmployee = isSomansaEmployee;
+        this.isAuthSuccess = isAuthSuccess;
+        this.message = message;
+        this.errorId = errorId;
+        this.requestId = requestId;
+        this.userName = userName;
     }
     
     // Getter 메소드들
@@ -51,6 +64,10 @@ public class SomansaAuthResult {
         return requestId;
     }
     
+    public String getUserName() {
+        return userName;
+    }
+    
     // Setter 메소드들
     public void setSomansaEmployee(boolean somansaEmployee) {
         isSomansaEmployee = somansaEmployee;
@@ -72,11 +89,22 @@ public class SomansaAuthResult {
         this.requestId = requestId;
     }
     
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+    
     /**
      * 성공 결과 생성
      */
     public static SomansaAuthResult success(String message, String requestId) {
         return new SomansaAuthResult(true, true, message, null, requestId);
+    }
+    
+    /**
+     * 성공 결과 생성 (사용자 이름 포함)
+     */
+    public static SomansaAuthResult success(String message, String requestId, String userName) {
+        return new SomansaAuthResult(true, true, message, null, requestId, userName);
     }
     
     /**
