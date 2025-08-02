@@ -1,10 +1,23 @@
 {
   "metadata": {
-    "lastUpdated": "2025-08-02T08:40:36Z",
-    "currentVersion": "1.0.17",
-    "totalReleases": 3
+    "lastUpdated": "2025-08-02T17:14:48Z",
+    "currentVersion": "1.0.18",
+    "totalReleases": 4
   },
   "releases": [
+    {
+      "version": "1.0.18",
+      "date": "2025-08-02",
+      "pr_number": 24,
+      "raw_summary": "\"body_html\": \"\\nSummary by CodeRabbit\\n\\nChores\\n\\n프로젝트 버전이 1.0.18로 업데이트되었습니다.\\n배포 브랜치로의 강제 머지 방식이 개선되어, 배포 워크플로우가 브랜치 푸시로 자동 트리거됩니다.\\nREADME 자동 업데이트 워크플로우에 필요한 권한이 추가되었습니다.\\n\\n\\n\\n\",\n  \"active_lock_reason\": null,\n  \"merged\": false,\n  \"mergeable\": true,\n  \"rebaseable\": true,\n  \"mergeable_state\": \"unstable\",\n  \"merged_by\": null,\n  \"comments\": 1,\n  \"review_comments\": 3,\n  \"maintainer_can_modify\": false,\n  \"commits\": 2,\n  \"additions\": 21,\n  \"deletions\": 10,\n  \"changed_files\": 3\n}",
+      "parsed_changes": {
+        "chores": [
+          "프로젝트 버전이 1.0.18로 업데이트되었습니다.",
+          "배포 브랜치로의 강제 머지 방식이 개선되어, 배포 워크플로우가 브랜치 푸시로 자동 트리거됩니다.",
+          "README 자동 업데이트 워크플로우에 필요한 권한이 추가되었습니다."
+        ]
+      }
+    },
     {
       "version": "1.0.17",
       "date": "2025-08-02",
