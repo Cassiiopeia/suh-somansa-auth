@@ -2,7 +2,7 @@
 
 소만사(SOMANSA) 직원 인증 확인 Java 라이브러리
 
-## 📋 최신 버전 : 1.0.19
+## 📋 최신 버전 : 1.0.5
 
 ## ✨ 주요 기능
 
@@ -11,6 +11,10 @@
 - 🌐 **OkHttp를 사용한 안정적인 HTTP 통신**
 - 🎯 **간단한 boolean 반환으로 직원 여부 확인**
 - 📝 **깔끔한 로그 출력 및 디버그 지원**
+
+## 📚 변경 이력
+
+전체 변경 이력은 [CHANGELOG.md](./CHANGELOG.md)를 참고하세요.
 
 ## 설치 방법
 
@@ -58,29 +62,7 @@ dependencies {
 
 ## 🚀 사용법
 
-### 1️⃣ 기본 직원 인증 (기존 방식)
-
-```java
-import me.suhsaechan.suhsomansaauth.service.SomansaAuthEngine;
-import me.suhsaechan.suhsomansaauth.dto.SomansaAuthResult;
-
-public class Example {
-    public static void main(String[] args) {
-        SomansaAuthEngine authEngine = new SomansaAuthEngine();
-        
-        // 간단한 직원 확인
-        SomansaAuthResult result = authEngine.isSomansaEmployee("chan4760", "password");
-        
-        if (result.isSomansaEmployee()) {
-            System.out.println("✅ 소만사 직원입니다: " + result.getMessage());
-        } else {
-            System.out.println("❌ " + result.getMessage());
-        }
-    }
-}
-```
-
-### 2️⃣ 📝 **NEW!** 사용자 이름까지 조회 (v1.0.5+)
+### 1. 기본 직원 인증 및 사용자 이름 조회
 
 ```java
 import me.suhsaechan.suhsomansaauth.service.SomansaAuthEngine;
@@ -104,7 +86,7 @@ public class AdvancedExample {
 }
 ```
 
-### 3️⃣ Spring Boot에서 사용
+### 2. Spring Boot에서 사용
 
 ```java
 import me.suhsaechan.suhsomansaauth.service.SomansaAuthEngine;
@@ -160,7 +142,7 @@ public class SomansaAuthResult {
 }
 ```
 
-### 🆕 새로운 메서드 (v1.0.5+)
+### 메서드 
 
 - `getSomansaEmployeeInfo(loginId, password)` - 직원 인증 + 실제 이름 조회
 - `getUserName()` - 조회된 사용자 실제 이름 반환
@@ -203,21 +185,3 @@ public class SomansaAuthResult {
 
 MIT License
 
-## 📚 변경 이력
-
-전체 변경 이력은 [CHANGELOG.md](./CHANGELOG.md)를 참고하세요.
-
-### 🆕 v1.0.5 (최신)
-- 🎯 **새로운 기능**: `getSomansaEmployeeInfo()` - 직원 인증 + 실제 이름 조회
-- 🔄 **클래스명 변경**: `SomansaAuthService` → `SomansaAuthEngine`
-- 📝 **로그 개선**: 더 명확한 Mattermost 로그인 오류 메시지
-- 🛠️ **버그 수정**: 자동 도메인 처리 및 쿠키 관리 개선
-
-### v1.0.4
-- 버그 수정 및 안정성 개선
-
-### v1.0.0
-- 초기 버전 출시
-- 소만사 직원 인증 기능
-- 내부 Logger 구현
-- OkHttp 기반 HTTP 통신
