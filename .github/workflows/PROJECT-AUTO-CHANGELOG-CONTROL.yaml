@@ -368,7 +368,8 @@ jobs:
         run: |
           echo "🚀 Deploy 브랜치 업데이트 시작..."
           
-          # deploy 브랜치로 main 내용 푸시 (배포 워크플로우 자동 트리거)
+          # main 브랜치 fetch 및 deploy 브랜치로 강제 푸시
+          git fetch origin main:main
           git push origin main:deploy --force
           
           echo "✅ Deploy 브랜치 업데이트 완료! 배포 워크플로우가 자동으로 트리거됩니다."
