@@ -5,6 +5,7 @@ on:
       - deploy  # (기본) deploy 브랜치 푸시될 때 트리거
     tags:
       - 'v*.*.*'  # 태그 푸시될 때 트리거
+  workflow_dispatch:  # 수동 트리거 허용
 
 jobs:
   publish:
