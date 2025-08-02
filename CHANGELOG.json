@@ -1,10 +1,25 @@
 {
   "metadata": {
-    "lastUpdated": "2025-08-02T17:22:26Z",
-    "currentVersion": "1.0.19",
-    "totalReleases": 5
+    "lastUpdated": "2025-08-02T17:40:35Z",
+    "currentVersion": "1.0.21",
+    "totalReleases": 6
   },
   "releases": [
+    {
+      "version": "1.0.21",
+      "date": "2025-08-02",
+      "pr_number": 27,
+      "raw_summary": "\"body_html\": \"\\nSummary by CodeRabbit\\n\\nChores\\n\\n프로젝트 버전이 1.0.20으로 업데이트되었습니다.\\n배포 브랜치로의 강제 병합 방식이 개선되어 브랜치 푸시 시 배포 워크플로우가 자동으로 트리거됩니다.\\nREADME 자동 업데이트 워크플로우에 필요한 권한이 추가되었습니다.\\nREADME에 변경 이력 섹션이 추가되고 사용 예제가 최신 API 메서드 중심으로 통합되었습니다.\\n변경 사항이 CHANGELOG에 반영되었습니다.\\n\\n\\n\\n\",\n  \"active_lock_reason\": null,\n  \"merged\": false,\n  \"mergeable\": true,\n  \"rebaseable\": true,\n  \"mergeable_state\": \"unstable\",\n  \"merged_by\": null,\n  \"comments\": 1,\n  \"review_comments\": 0,\n  \"maintainer_can_modify\": false,\n  \"commits\": 2,\n  \"additions\": 2,\n  \"deletions\": 2,\n  \"changed_files\": 2\n}",
+      "parsed_changes": {
+        "chores": [
+          "프로젝트 버전이 1.0.20으로 업데이트되었습니다.",
+          "배포 브랜치로의 강제 병합 방식이 개선되어 브랜치 푸시 시 배포 워크플로우가 자동으로 트리거됩니다.",
+          "README 자동 업데이트 워크플로우에 필요한 권한이 추가되었습니다.",
+          "README에 변경 이력 섹션이 추가되고 사용 예제가 최신 API 메서드 중심으로 통합되었습니다.",
+          "변경 사항이 CHANGELOG에 반영되었습니다."
+        ]
+      }
+    },
     {
       "version": "1.0.19",
       "date": "2025-08-02",
