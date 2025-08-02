@@ -1,10 +1,21 @@
 {
   "metadata": {
-    "lastUpdated": "2025-08-02T18:27:32Z",
-    "currentVersion": "1.0.24",
-    "totalReleases": 10
+    "lastUpdated": "2025-08-02T18:39:38Z",
+    "currentVersion": "1.0.25",
+    "totalReleases": 11
   },
   "releases": [
+    {
+      "version": "1.0.25",
+      "date": "2025-08-02",
+      "pr_number": 30,
+      "raw_summary": "\"body_html\": \"\\nSummary by CodeRabbit\\n\\nChore\\n\\n프로젝트 버전이 1.0.23에서 1.0.24로 업데이트되었습니다.\\n\\n\\n\\n\",\n  \"active_lock_reason\": null,\n  \"merged\": false,\n  \"mergeable\": true,\n  \"rebaseable\": true,\n  \"mergeable_state\": \"unstable\",\n  \"merged_by\": null,\n  \"comments\": 1,\n  \"review_comments\": 0,\n  \"maintainer_can_modify\": false,\n  \"commits\": 2,\n  \"additions\": 2,\n  \"deletions\": 2,\n  \"changed_files\": 2\n}",
+      "parsed_changes": {
+        "chore": [
+          "프로젝트 버전이 1.0.23에서 1.0.24로 업데이트되었습니다."
+        ]
+      }
+    },
     {
       "version": "1.0.24",
       "date": "2025-08-02",
