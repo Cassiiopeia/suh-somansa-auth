@@ -1,10 +1,23 @@
 {
   "metadata": {
-    "lastUpdated": "2025-08-02T17:14:48Z",
-    "currentVersion": "1.0.18",
-    "totalReleases": 4
+    "lastUpdated": "2025-08-02T17:22:26Z",
+    "currentVersion": "1.0.19",
+    "totalReleases": 5
   },
   "releases": [
+    {
+      "version": "1.0.19",
+      "date": "2025-08-02",
+      "pr_number": 24,
+      "raw_summary": "\"body_html\": \"\\nSummary by CodeRabbit\\n\\nChores\\n\\n프로젝트 버전이 1.0.18로 업데이트되었습니다.\\n배포 브랜치로의 강제 머지 방식이 개선되어, 배포 워크플로우가 브랜치 푸시로 자동 트리거됩니다.\\nREADME 자동 업데이트 워크플로우에 필요한 권한이 추가되었습니다.\\n\\n\\n\\n\",\n  \"active_lock_reason\": null,\n  \"merged\": true,\n  \"mergeable\": null,\n  \"rebaseable\": null,\n  \"mergeable_state\": \"unknown\",\n  \"merged_by\": {\n    \"login\": \"github-actions[bot]\",\n    \"id\": 41898282,\n    \"node_id\": \"MDM6Qm90NDE4OTgyODI=\",\n    \"avatar_url\": \"https://avatars.githubusercontent.com/in/15368?v=4\",\n    \"gravatar_id\": \"\",\n    \"url\": \"https://api.github.com/users/github-actions%5Bbot%5D\",\n    \"html_url\": \"https://github.com/apps/github-actions\",\n    \"followers_url\": \"https://api.github.com/users/github-actions%5Bbot%5D/followers\",\n    \"following_url\": \"https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}\",\n    \"gists_url\": \"https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}\",\n    \"starred_url\": \"https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}\",\n    \"subscriptions_url\": \"https://api.github.com/users/github-actions%5Bbot%5D/subscriptions\",\n    \"organizations_url\": \"https://api.github.com/users/github-actions%5Bbot%5D/orgs\",\n    \"repos_url\": \"https://api.github.com/users/github-actions%5Bbot%5D/repos\",\n    \"events_url\": \"https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}\",\n    \"received_events_url\": \"https://api.github.com/users/github-actions%5Bbot%5D/received_events\",\n    \"type\": \"Bot\",\n    \"user_view_type\": \"public\",\n    \"site_admin\": false\n  },\n  \"comments\": 1,\n  \"review_comments\": 4,\n  \"maintainer_can_modify\": false,\n  \"commits\": 3,\n  \"additions\": 46,\n  \"deletions\": 13,\n  \"changed_files\": 5\n}",
+      "parsed_changes": {
+        "chores": [
+          "프로젝트 버전이 1.0.18로 업데이트되었습니다.",
+          "배포 브랜치로의 강제 머지 방식이 개선되어, 배포 워크플로우가 브랜치 푸시로 자동 트리거됩니다.",
+          "README 자동 업데이트 워크플로우에 필요한 권한이 추가되었습니다."
+        ]
+      }
+    },
     {
       "version": "1.0.18",
       "date": "2025-08-02",
