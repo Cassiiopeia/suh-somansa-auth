@@ -1,4 +1,4 @@
-name: PROJECT-AUTO-CHANGELOG-CONTROL
+name: AUTO UPDATE PROJECT CHANGELOG
 
 on:
   pull_request_target:
@@ -308,6 +308,15 @@ jobs:
             echo "❌ PR 머지에 실패했습니다. 수동으로 처리해주세요."
             exit 1
           fi
+
+      - name: 배포 워크플로우 트리거
+        if: env.SUMMARY_FOUND == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🚀 배포 워크플로우 트리거 중..."
+          gh workflow run "PUBLISH-SUH-NEXUS-REPOSITORY"
+          echo "✅ 배포 워크플로우가 트리거되었습니다!"
 
       - name: 정리
         run: |

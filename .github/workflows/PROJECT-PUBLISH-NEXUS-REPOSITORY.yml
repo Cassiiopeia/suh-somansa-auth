@@ -1,5 +1,4 @@
-name: PUBLISH-PROJECT-NEXUS-REPOSITORY
-
+name: PUBLISH-SUH-NEXUS-REPOSITORY
 on:
   push:
     branches:
