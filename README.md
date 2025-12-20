@@ -2,7 +2,12 @@
 
 소만사(SOMANSA) 직원 인증 확인 Java 라이브러리
 
-## 📋 최신 버전 : 1.0.26
+<!-- AUTO-VERSION-SECTION: DO NOT EDIT MANUALLY -->
+<!-- 이 섹션은 .github/workflows/PROJECT-README-VERSION-UPDATE.yaml에 의해 자동으로 업데이트됩니다 -->
+## 최신 버전 : v1.0.27
+
+[전체 버전 기록 보기](CHANGELOG.md)
+<!-- END-AUTO-VERSION-SECTION -->
 
 ## ✨ 주요 기능
 
@@ -174,10 +179,3 @@ MIT License
 
 
 ---
-
-<!-- AUTO-VERSION-SECTION: DO NOT EDIT MANUALLY -->
-<!-- 이 섹션은 .github/workflows/PROJECT-README-VERSION-UPDATE.yaml에 의해 자동으로 업데이트됩니다 -->
-## 최신 버전 : v1.0.27
-
-[전체 버전 기록 보기](CHANGELOG.md)
-<!-- END-AUTO-VERSION-SECTION -->
