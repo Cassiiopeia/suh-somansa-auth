@@ -28,7 +28,7 @@ repositories {
     mavenCentral()
     // Suh-Nexus 추가
     maven {
-        url "http://suh-project.synology.me:9999/repository/maven-releases/"
+        url "https://nexus.suhsaechan.kr/repository/maven-releases/"
         allowInsecureProtocol = true
     }
 }
@@ -44,7 +44,7 @@ dependencies {
 <repositories>
   <repository>
     <id>suh-nexus</id>
-    <url>http://suh-project.synology.me:9999/repository/maven-releases/</url>
+    <url>https://nexus.suhsaechan.kr/repository/maven-releases/</url>
     <releases>
       <enabled>true</enabled>
     </releases>
