@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'me.suhsaechan'
-version = '1.1.1'
+version = '1.1.3'
 //version = project.hasProperty('version') ? project.property('version') : '1.0.0'
 
 java {
@@ -64,18 +64,15 @@ publishing {
         mavenLocal()
         maven {
             name = 'nexus'
-            def nexusUrl = project.findProperty('nexusUrl') ?: 'suh-project.synology.me'
-            def nexusPort = project.findProperty('nexusPort') ?: '9999'
-            def releasesRepoUrl = "http://${nexusUrl}:${nexusPort}/repository/maven-releases/"
-            def snapshotsRepoUrl = "http://${nexusUrl}:${nexusPort}/repository/maven-snapshots/"
-            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            url = uri(
+                    version.endsWith('SNAPSHOT')
+                            ? "https://nexus.suhsaechan.kr/repository/maven-snapshots/"
+                            : "https://nexus.suhsaechan.kr/repository/maven-releases/"
+            )
             allowInsecureProtocol = true
-
-            if (project.hasProperty('nexusUsername') && project.hasProperty('nexusPassword')) {
-                credentials {
-                    username = project.property('nexusUsername')
-                    password = project.property('nexusPassword')
-                }
+            credentials {
+                username = project.findProperty('nexusUsername')
+                password = project.findProperty('nexusPassword')
             }
         }
     }
